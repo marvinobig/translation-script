@@ -11,6 +11,7 @@ from translate import Translator
 def main():
     # get input file
     pathToInputFile = sys.argv[1]
+    language = sys.argv[2]
     fileExtension = os.path.splitext(pathToInputFile)[1]
     ankiFile = f"./anki_{uuid.uuid4()}.csv"
     saveFile = "./save.txt"
@@ -48,7 +49,7 @@ def main():
                     newWords.append(word)
 
         # translate elements
-        translator = Translator(to_lang="de")
+        translator = Translator(to_lang=language)
                 
         if newWords:    
             for word in newWords:
