@@ -4,6 +4,7 @@ import sys
 import os
 import csv
 import uuid
+import string
 from translate import Translator
 
 
@@ -29,15 +30,19 @@ def main():
     # read each line in the file
     with open(pathToInputFile) as iFile:
         # split data in file into an array
-        enWords = iFile.read().split()
+        text = iFile.read()
+        text = text.translate(str.maketrans('', '', string.punctuation)) 
+        enWords = text.split()
         cleanedEnWords = list(dict.fromkeys(enWords))
         
         # save new words to txt file for future comparison
         with open(saveFile, 'a+') as sFile:
             sFile.seek(0)
-            savedWords = sFile.read().split()
+            savedWords = sFile.read().lower().split()
             
             for word in cleanedEnWords:
+                word = word.lower()
+                
                 if word not in savedWords:
                     sFile.write(f"{word}\n")
                     newWords.append(word)
@@ -54,6 +59,9 @@ def main():
             with open(ankiFile, 'w', newline= '') as aFile:
                 ankiFileCsv = csv.writer(aFile)
                 ankiFileCsv.writerows(newWordTranslations)
+                
+            print(f"Translated {len(newWords)} words")
+            return 0
         else:
             print("No new words to translate")
             return -1
