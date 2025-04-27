@@ -1,6 +1,6 @@
 translation_script
 __pycache__
 save.txt
-anki.csv
+*.csv
 *.txt
 !requirements.txt
