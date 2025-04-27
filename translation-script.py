@@ -18,6 +18,11 @@ def main():
         print("Input file is not a .txt file")
         return -1
     
+    # check the file exists
+    if not os.path.isfile(pathToInputFile):
+        print("Input file does not exist")
+        return -1
+        
 
 
 
