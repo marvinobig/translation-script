@@ -13,6 +13,11 @@ def main():
     ankiFile = "./anki.csv"
     newWordTranslations = []
 
+    # check it is a txt file
+    if fileExtension != ".txt":
+        print("Input file is not a .txt file")
+        return -1
+    
 
 
 
