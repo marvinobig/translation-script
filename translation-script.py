@@ -59,6 +59,7 @@ def generateCsv(translator, newWords, ankiFile):
     else:
         raise Exception("No new words to translate")
 
+
 def main():
     try:
         # get input file
