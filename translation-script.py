@@ -3,6 +3,7 @@
 import sys
 import os
 import csv
+import uuid
 from translate import Translator
 
 
@@ -10,7 +11,7 @@ def main():
     # get input file
     pathToInputFile = sys.argv[1]
     fileExtension = os.path.splitext(pathToInputFile)[1]
-    ankiFile = "./anki.csv"
+    ankiFile = f"./anki_{uuid.uuid4()}.csv"
     newWordTranslations = []
 
     # check it is a txt file
