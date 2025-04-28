@@ -41,6 +41,12 @@ def extractWords(pathToInputFile, saveFile):
             
             return newWords
 
+def createTranslationsDir():
+    dirName = "translations"
+    
+    if not os.path.isdir(dirName):
+        os.mkdir(dirName)
+
 def generateCsv(translator, newWords, ankiFile):
     newWordTranslations = []
     
@@ -66,8 +72,8 @@ def main():
         pathToInputFile = sys.argv[1]
         language = sys.argv[2]
         fileExtension = os.path.splitext(pathToInputFile)[1]
-        ankiFile = f"./anki_{uuid.uuid4()}.csv"
-        saveFile = "./save.txt"
+        ankiFile = os.path.join("translations", f"anki_{uuid.uuid4()}.csv")
+        saveFile = "save.txt"
 
         performChecks(pathToInputFile, fileExtension)
             
@@ -75,6 +81,9 @@ def main():
 
         # translate elements
         translator = Translator(to_lang=language)
+        
+        # create translations dir
+        createTranslationsDir()
                     
         generateCsv(translator, newWords, ankiFile)
     except IndexError:
