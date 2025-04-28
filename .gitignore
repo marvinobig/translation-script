@@ -4,3 +4,4 @@ save.txt
 *.csv
 *.txt
 !requirements.txt
+translations
