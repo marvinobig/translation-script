@@ -41,8 +41,8 @@ Or if you made it executable:
 
 - A CSV file named `anki_<uuid>.csv` is generated in the **/translations** folder (which is created in the same location as the script) where the script is run.
 - **Format**: `[original_word, translated_word]`
-- A text file called `save.txt` is generated and updated to **track already translated words**.
-- If a word is already present in `save.txt`, it will not be translated again.
+- A text file called `SAVE.txt` is generated and updated to **track already translated words**.
+- If a word is already present in `SAVE.txt`, it will not be translated again.
 
 ## Script Behavior
 

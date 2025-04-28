@@ -73,7 +73,7 @@ def main():
         language = sys.argv[2]
         fileExtension = os.path.splitext(pathToInputFile)[1]
         ankiFile = os.path.join("translations", f"anki_{uuid.uuid4()}.csv")
-        saveFile = "save.txt"
+        saveFile = "SAVE.txt"
 
         performChecks(pathToInputFile, fileExtension)
             
