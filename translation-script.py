@@ -70,7 +70,8 @@ def main():
     try:
         # get input file
         pathToInputFile = sys.argv[1]
-        language = sys.argv[2]
+        fromLang = sys.argv[2]
+        toLang = sys.argv[3]
         fileExtension = os.path.splitext(pathToInputFile)[1]
         ankiFile = os.path.join("translations", f"anki_{uuid.uuid4()}.csv")
         saveFile = "SAVE.txt"
@@ -80,7 +81,7 @@ def main():
         newWords = extractWords(pathToInputFile, saveFile)
 
         # translate elements
-        translator = Translator(to_lang=language)
+        translator = Translator(from_lang=fromLang, to_lang=toLang)
         
         # create translations dir
         createTranslationsDir()
