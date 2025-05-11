@@ -25,16 +25,17 @@ This script reads a `.txt` file containing words, removes punctuation, identifie
 Run the script from the terminal:
 
 ```bash
-python translation-script.py <input-file> <target-language-code>
+python translation-script.py <input-file> <from-language-code> <target-language-code>
 ```
 Or if you made it executable:
 
 ```bash
-./translation-script.py <input-file> <target-language-code>
+./translation-script.py <input-file> <from-language-code> <target-language-code>
 ```
 
 ### Arguments:
 - `<input-file>`: Path to your input `.txt` file containing words.
+- `<from-language-code>`: Language code to translate from (e.g., `de` for German, `fr` for French, etc.).
 - `<target-language-code>`: Language code for translation (e.g., `de` for German, `fr` for French, etc.).
 
 ## Output
