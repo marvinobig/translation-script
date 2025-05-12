@@ -88,7 +88,7 @@ def main():
                     
         generateCsv(translator, newWords, ankiFile)
     except IndexError:
-        print("Provide all arguments e.g. <input-file> <target-language-code>")
+        print("Provide all arguments e.g. <input-file> <from-language-code> <target-language-code>")
         return -1
     except Exception as err:
         print(f"{err}")
